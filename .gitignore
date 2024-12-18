@@ -1,4 +1,5 @@
 .env
 config/__pycache__
 config/variable.env
+config/__init__.py
 google-chrome-stable
