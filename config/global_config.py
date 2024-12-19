@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/root/Aprendizado')
 from config.Imports import * #Não esquecer de colocar só " from Imports import " *
 
 class Global_Config:
@@ -10,13 +12,12 @@ class Global_Config:
         self.options.add_argument("--disable-gpu")
         self.options.add_argument("--no-sandbox")
         self.options.add_argument("--disable-dev-shm-usage")
-
-    def Start(self):
+    
+    # def Start(self):
         self.service = Service("/usr/bin/chromedriver")
         self.driver = webdriver.Chrome(service=self.service, options=self.options)
-
+        #Maximizar a tela
         self.driver.maximize_window()
-
         # Acessar a página desejada
         self.driver.get("http://localhost:3000/")
 
@@ -29,3 +30,4 @@ class Global_Config:
 if __name__ == "__main__":
     start = Global_Config()
     start.Login()
+    time.sleep(5)
